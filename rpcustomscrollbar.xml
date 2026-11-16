@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<extension type="plugin" method="upgrade" group="system">
+    <name>PLG_SYSTEM_CUSTOM_SCROLLBAR</name>
+    <author>Rishabh Ranjan Jha</author>
+    <creationDate>November 2026</creationDate>
+    <copyright>(C) 2021 Rishabh Ranjan Jha</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>rpextensions@gmail.com</authorEmail>
+    <version>1.1.0</version>
+    <description>PLG_SYSTEM_CUSTOM_SCROLLBAR_XML_DESCRIPTION</description>
+    <files>
+        <folder>src</folder>
+        <folder plugin="rpcustomscrollbar">services</folder>
+        <folder>language</folder>
+        <filename>script.php</filename>
+        <filename>LICENSE.txt</filename>
+        <filename>CHANGELOG.md</filename>
+    </files>
+    <namespace path="src">Joomla\Plugin\System\RPCustomScrollbar</namespace>
+    <config>
+        <fields name="params" addfilterprefix="Joomla\Plugin\System\RPCustomScrollbar\Filter">
+            <fieldset name="basic">
+                <field name="cssp" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_SITE_PART" />
+                <field name="site" type="radio" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_ON_SITE_PART" default="1" filter="scrollbar" layout="joomla.form.field.radio.switcher">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="sitetrack" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_SITE_PART" showon="site:1" />
+                <field name="tkswidth" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_WIDTH" default="12px" showon="site:1" filter="scrollbar" maxlength="64" />
+                <field name="tksbgcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BACKGROUND_COLOR" default="#ffffff" showon="site:1" filter="scrollbar" />
+                <field name="tksborder" type="radio" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_WANT_BORDER_ON_TRACK" default="1" showon="site:1" filter="scrollbar" layout="joomla.form.field.radio.switcher">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="tksbcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_COLOR" default="#ffffff" showon="tksborder:1[AND]site:1" filter="scrollbar" />
+                <field name="tksbwidth" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_WIDTH" default="0" showon="tksborder:1[AND]site:1" filter="scrollbar" maxlength="64" />
+                <field name="tksbstyle" type="list" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_STYLE" default="solid" showon="tksborder:1[AND]site:1" filter="scrollbar">
+                    <option value="none">None</option>
+                    <option value="dotted">Dotted</option>
+                    <option value="dashed">Dashed</option>
+                    <option value="solid">Solid</option>
+                    <option value="double">Double</option>
+                    <option value="groove">Groove</option>
+                    <option value="ridge">Ridge</option>
+                    <option value="inset">Inset</option>
+                    <option value="outset">Outset</option>
+                </field>
+                <field name="tksbradius" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_RADIUS" default="100px" showon="tksborder:1[AND]site:1" filter="scrollbar" maxlength="64" />
+                <field name="sitethumb" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_SITE_PART" showon="site:1" />
+                <field name="tbsbgcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BACKGROUND_COLOR" default="#d1c9cf" showon="site:1" filter="scrollbar" />
+                <field name="tbsborder" type="radio" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_WANT_BORDER_ON_THUMB" default="1" showon="site:1" filter="scrollbar" layout="joomla.form.field.radio.switcher">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="tbsbcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_COLOR" default="#ffffff" showon="tbsborder:1[AND]site:1" filter="scrollbar" />
+                <field name="tbsbwidth" type="text" default="0" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_WIDTH" showon="tbsborder:1[AND]site:1" filter="scrollbar" maxlength="64" />
+                <field name="tbsbstyle" type="list" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_STYLE" default="solid" showon="tbsborder:1[AND]site:1" filter="scrollbar">
+                    <option value="none">None</option>
+                    <option value="dotted">Dotted</option>
+                    <option value="dashed">Dashed</option>
+                    <option value="solid">Solid</option>
+                    <option value="double">Double</option>
+                    <option value="groove">Groove</option>
+                    <option value="ridge">Ridge</option>
+                    <option value="inset">Inset</option>
+                    <option value="outset">Outset</option>
+                </field>
+                <field name="tbsbradius" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_RADIUS" default="100px" showon="tbsborder:1[AND]site:1" filter="scrollbar" maxlength="64" />
+                <field name="sitethumbhover" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_SITE_PART_ONHOVER" showon="site:1" />
+                <field name="tbhsbgcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BACKGROUND_COLOR" default="#787878" showon="site:1" filter="scrollbar" />
+                <field name="tbhsborder" type="radio" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_WANT_BORDER_ON_THUMB" default="1" showon="site:1" filter="scrollbar" layout="joomla.form.field.radio.switcher">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="tbhsbcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_COLOR" default="#ffffff" showon="tbhsborder:1[AND]site:1" filter="scrollbar" />
+                <field name="tbhsbwidth" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_WIDTH" default="0" showon="tbhsborder:1[AND]site:1" filter="scrollbar" maxlength="64" />
+                <field name="tbhsbstyle" type="list" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_STYLE" default="solid" showon="tbhsborder:1[AND]site:1" filter="scrollbar">
+                    <option value="none">None</option>
+                    <option value="dotted">Dotted</option>
+                    <option value="dashed">Dashed</option>
+                    <option value="solid">Solid</option>
+                    <option value="double">Double</option>
+                    <option value="groove">Groove</option>
+                    <option value="ridge">Ridge</option>
+                    <option value="inset">Inset</option>
+                    <option value="outset">Outset</option>
+                </field>
+                <field name="tbhsbradius" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_RADIUS" default="100px" showon="tbhsborder:1[AND]site:1" filter="scrollbar" maxlength="64" />
+                <field name="csap" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_ADMIN_PART" />
+                <field name="admin" type="radio" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_ON_ADMIN_PART" default="1" filter="scrollbar" layout="joomla.form.field.radio.switcher">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="admintrack" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_ADMIN_PART" showon="admin:1" />
+                <field name="tkawidth" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_WIDTH" default="12px" showon="admin:1" filter="scrollbar" maxlength="64" />
+                <field name="tkabgcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BACKGROUND_COLOR" default="#ffffff" showon="admin:1" filter="scrollbar" />
+                <field name="tkaborder" type="radio" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_WANT_BORDER_ON_TRACK" default="1" showon="admin:1" filter="scrollbar" layout="joomla.form.field.radio.switcher">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="tkabcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_COLOR" default="#ffffff" showon="tkaborder:1[AND]admin:1" filter="scrollbar" />
+                <field name="tkabwidth" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_WIDTH" default="0" showon="tkaborder:1[AND]admin:1" filter="scrollbar" maxlength="64" />
+                <field name="tkabstyle" type="list" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_STYLE" default="solid" showon="tkaborder:1[AND]admin:1" filter="scrollbar">
+                    <option value="none">None</option>
+                    <option value="dotted">Dotted</option>
+                    <option value="dashed">Dashed</option>
+                    <option value="solid">Solid</option>
+                    <option value="double">Double</option>
+                    <option value="groove">Groove</option>
+                    <option value="ridge">Ridge</option>
+                    <option value="inset">Inset</option>
+                    <option value="outset">Outset</option>
+                </field>
+                <field name="tkabradius" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_RADIUS" default="100px" showon="tkaborder:1[AND]admin:1" filter="scrollbar" maxlength="64" />
+                <field name="adminthumb" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_ADMIN_PART" showon="admin:1" />
+                <field name="tbabgcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BACKGROUND_COLOR" default="#d1c9cf" showon="admin:1" filter="scrollbar" />
+                <field name="tbaborder" type="radio" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_WANT_BORDER_ON_THUMB" showon="admin:1" default="1" filter="scrollbar" layout="joomla.form.field.radio.switcher">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="tbabcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_COLOR" default="#ffffff" showon="tbaborder:1[AND]admin:1" filter="scrollbar" />
+                <field name="tbabwidth" type="text" default="0" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_WIDTH" showon="tbaborder:1[AND]admin:1" filter="scrollbar" maxlength="64" />
+                <field name="tbabstyle" type="list" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_STYLE" default="solid" showon="tbaborder:1[AND]admin:1" filter="scrollbar">
+                    <option value="none">None</option>
+                    <option value="dotted">Dotted</option>
+                    <option value="dashed">Dashed</option>
+                    <option value="solid">Solid</option>
+                    <option value="double">Double</option>
+                    <option value="groove">Groove</option>
+                    <option value="ridge">Ridge</option>
+                    <option value="inset">Inset</option>
+                    <option value="outset">Outset</option>
+                </field>
+                <field name="tbabradius" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_RADIUS" default="100px" showon="tbaborder:1[AND]admin:1" filter="scrollbar" maxlength="64" />
+                <field name="adminthumbhover" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_ADMIN_PART_ONHOVER" showon="admin:1" />
+                <field name="tbhabgcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BACKGROUND_COLOR" default="#787878" showon="admin:1" filter="scrollbar" />
+                <field name="tbhaborder" type="radio" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_WANT_BORDER_ON_THUMB" default="1" showon="admin:1" filter="scrollbar" layout="joomla.form.field.radio.switcher">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="tbhabcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_COLOR" default="#ffffff" showon="tbhaborder:1[AND]admin:1" filter="scrollbar" />
+                <field name="tbhabwidth" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_WIDTH" default="0" showon="tbhaborder:1[AND]admin:1" filter="scrollbar" maxlength="64" />
+                <field name="tbhabstyle" type="list" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_STYLE" default="solid" showon="tbhaborder:1[AND]admin:1" filter="scrollbar">
+                    <option value="none">None</option>
+                    <option value="dotted">Dotted</option>
+                    <option value="dashed">Dashed</option>
+                    <option value="solid">Solid</option>
+                    <option value="double">Double</option>
+                    <option value="groove">Groove</option>
+                    <option value="ridge">Ridge</option>
+                    <option value="inset">Inset</option>
+                    <option value="outset">Outset</option>
+                </field>
+                <field name="tbhabradius" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_RADIUS" default="100px" showon="tbhaborder:1[AND]admin:1" filter="scrollbar" maxlength="64" />
+            </fieldset>
+            <fieldset name="description">
+                <field name="desctrack" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_DESC_TRACK" />
+                <field name="descthumb" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_DESC_THUMB" />
+                <field name="descpluginwork" type="note" class="alert alert-warning" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_DESC_PLUGIN_WORK" />
+                <field name="descpluginnotwork" type="note" class="alert alert-danger" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_DESC_PLUGIN_NOT_WORK" />
+                <field name="descreviewjed" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_DESC_REVIEW_JED" />
+            </fieldset>
+        </fields>
+    </config>
+    <scriptfile>script.php</scriptfile>
+    <languages folder="language">
+        <language tag="en-GB" client="administrator">en-GB/en-GB.plg_system_rpcustomscrollbar.ini</language>
+        <language tag="en-GB" client="administrator">en-GB/en-GB.plg_system_rpcustomscrollbar.sys.ini</language>
+    </languages>
+</extension>
