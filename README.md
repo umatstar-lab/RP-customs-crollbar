@@ -4,11 +4,13 @@
 
 ## Скачать
 
-[Установочный ZIP 1.1.0](https://github.com/umatstar-lab/RP-customs-crollbar/raw/refs/heads/main/dist/rp-custom-scrollbar-joomla6-1.1.0.zip)
+[Установочный ZIP 1.1.1](https://github.com/umatstar-lab/RP-customs-crollbar/raw/refs/heads/main/dist/rp-custom-scrollbar-joomla6-1.1.1.zip)
 
-[ZIP из репозитория](https://github.com/umatstar-lab/RP-customs-crollbar/raw/refs/heads/main/dist/rp-custom-scrollbar-joomla6-1.1.0.zip) · [Отчёт и инструкция](docs/verification-1.1.0.ru.md) · [SHA-256](dist/SHA256SUMS.txt)
+[ZIP из репозитория](https://github.com/umatstar-lab/RP-customs-crollbar/raw/refs/heads/main/dist/rp-custom-scrollbar-joomla6-1.1.1.zip) · [Отчёт и инструкция](docs/verification-1.1.0.ru.md) · [SHA-256](dist/SHA256SUMS.txt)
 
 Загрузите ZIP через установщик расширений Joomla. Для обновления установите поверх версии 1.0.0, не удаляя её предварительно: настройки и состояние включения сохраняются. При новой установке включите плагин в менеджере плагинов.
+
+Языки интерфейса: английский, русский и украинский. Язык выбирается автоматически по языку панели управления Joomla; соответствующий языковой пакет Joomla должен быть установлен.
 
 ## Изменения
 

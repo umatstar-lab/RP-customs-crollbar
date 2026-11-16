@@ -6,7 +6,7 @@
     <copyright>(C) 2021 Rishabh Ranjan Jha</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <authorEmail>rpextensions@gmail.com</authorEmail>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <description>PLG_SYSTEM_CUSTOM_SCROLLBAR_XML_DESCRIPTION</description>
     <files>
         <folder>src</folder>
@@ -19,7 +19,7 @@
     <namespace path="src">Joomla\Plugin\System\RPCustomScrollbar</namespace>
     <config>
         <fields name="params" addfilterprefix="Joomla\Plugin\System\RPCustomScrollbar\Filter">
-            <fieldset name="basic">
+            <fieldset name="basic" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_BASIC">
                 <field name="cssp" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_SITE_PART" />
                 <field name="site" type="radio" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_ON_SITE_PART" default="1" filter="scrollbar" layout="joomla.form.field.radio.switcher">
                     <option value="0">JNO</option>
@@ -35,15 +35,15 @@
                 <field name="tksbcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_COLOR" default="#ffffff" showon="tksborder:1[AND]site:1" filter="scrollbar" />
                 <field name="tksbwidth" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_WIDTH" default="0" showon="tksborder:1[AND]site:1" filter="scrollbar" maxlength="64" />
                 <field name="tksbstyle" type="list" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_STYLE" default="solid" showon="tksborder:1[AND]site:1" filter="scrollbar">
-                    <option value="none">None</option>
-                    <option value="dotted">Dotted</option>
-                    <option value="dashed">Dashed</option>
-                    <option value="solid">Solid</option>
-                    <option value="double">Double</option>
-                    <option value="groove">Groove</option>
-                    <option value="ridge">Ridge</option>
-                    <option value="inset">Inset</option>
-                    <option value="outset">Outset</option>
+                    <option value="none">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_NONE</option>
+                    <option value="dotted">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DOTTED</option>
+                    <option value="dashed">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DASHED</option>
+                    <option value="solid">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_SOLID</option>
+                    <option value="double">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DOUBLE</option>
+                    <option value="groove">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_GROOVE</option>
+                    <option value="ridge">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_RIDGE</option>
+                    <option value="inset">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_INSET</option>
+                    <option value="outset">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_OUTSET</option>
                 </field>
                 <field name="tksbradius" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_RADIUS" default="100px" showon="tksborder:1[AND]site:1" filter="scrollbar" maxlength="64" />
                 <field name="sitethumb" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_SITE_PART" showon="site:1" />
@@ -55,15 +55,15 @@
                 <field name="tbsbcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_COLOR" default="#ffffff" showon="tbsborder:1[AND]site:1" filter="scrollbar" />
                 <field name="tbsbwidth" type="text" default="0" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_WIDTH" showon="tbsborder:1[AND]site:1" filter="scrollbar" maxlength="64" />
                 <field name="tbsbstyle" type="list" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_STYLE" default="solid" showon="tbsborder:1[AND]site:1" filter="scrollbar">
-                    <option value="none">None</option>
-                    <option value="dotted">Dotted</option>
-                    <option value="dashed">Dashed</option>
-                    <option value="solid">Solid</option>
-                    <option value="double">Double</option>
-                    <option value="groove">Groove</option>
-                    <option value="ridge">Ridge</option>
-                    <option value="inset">Inset</option>
-                    <option value="outset">Outset</option>
+                    <option value="none">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_NONE</option>
+                    <option value="dotted">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DOTTED</option>
+                    <option value="dashed">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DASHED</option>
+                    <option value="solid">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_SOLID</option>
+                    <option value="double">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DOUBLE</option>
+                    <option value="groove">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_GROOVE</option>
+                    <option value="ridge">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_RIDGE</option>
+                    <option value="inset">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_INSET</option>
+                    <option value="outset">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_OUTSET</option>
                 </field>
                 <field name="tbsbradius" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_RADIUS" default="100px" showon="tbsborder:1[AND]site:1" filter="scrollbar" maxlength="64" />
                 <field name="sitethumbhover" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_SITE_PART_ONHOVER" showon="site:1" />
@@ -75,15 +75,15 @@
                 <field name="tbhsbcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_COLOR" default="#ffffff" showon="tbhsborder:1[AND]site:1" filter="scrollbar" />
                 <field name="tbhsbwidth" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_WIDTH" default="0" showon="tbhsborder:1[AND]site:1" filter="scrollbar" maxlength="64" />
                 <field name="tbhsbstyle" type="list" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_STYLE" default="solid" showon="tbhsborder:1[AND]site:1" filter="scrollbar">
-                    <option value="none">None</option>
-                    <option value="dotted">Dotted</option>
-                    <option value="dashed">Dashed</option>
-                    <option value="solid">Solid</option>
-                    <option value="double">Double</option>
-                    <option value="groove">Groove</option>
-                    <option value="ridge">Ridge</option>
-                    <option value="inset">Inset</option>
-                    <option value="outset">Outset</option>
+                    <option value="none">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_NONE</option>
+                    <option value="dotted">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DOTTED</option>
+                    <option value="dashed">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DASHED</option>
+                    <option value="solid">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_SOLID</option>
+                    <option value="double">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DOUBLE</option>
+                    <option value="groove">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_GROOVE</option>
+                    <option value="ridge">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_RIDGE</option>
+                    <option value="inset">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_INSET</option>
+                    <option value="outset">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_OUTSET</option>
                 </field>
                 <field name="tbhsbradius" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_RADIUS" default="100px" showon="tbhsborder:1[AND]site:1" filter="scrollbar" maxlength="64" />
                 <field name="csap" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_ADMIN_PART" />
@@ -101,15 +101,15 @@
                 <field name="tkabcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_COLOR" default="#ffffff" showon="tkaborder:1[AND]admin:1" filter="scrollbar" />
                 <field name="tkabwidth" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_WIDTH" default="0" showon="tkaborder:1[AND]admin:1" filter="scrollbar" maxlength="64" />
                 <field name="tkabstyle" type="list" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_STYLE" default="solid" showon="tkaborder:1[AND]admin:1" filter="scrollbar">
-                    <option value="none">None</option>
-                    <option value="dotted">Dotted</option>
-                    <option value="dashed">Dashed</option>
-                    <option value="solid">Solid</option>
-                    <option value="double">Double</option>
-                    <option value="groove">Groove</option>
-                    <option value="ridge">Ridge</option>
-                    <option value="inset">Inset</option>
-                    <option value="outset">Outset</option>
+                    <option value="none">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_NONE</option>
+                    <option value="dotted">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DOTTED</option>
+                    <option value="dashed">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DASHED</option>
+                    <option value="solid">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_SOLID</option>
+                    <option value="double">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DOUBLE</option>
+                    <option value="groove">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_GROOVE</option>
+                    <option value="ridge">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_RIDGE</option>
+                    <option value="inset">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_INSET</option>
+                    <option value="outset">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_OUTSET</option>
                 </field>
                 <field name="tkabradius" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_TRACK_BORDER_RADIUS" default="100px" showon="tkaborder:1[AND]admin:1" filter="scrollbar" maxlength="64" />
                 <field name="adminthumb" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_ADMIN_PART" showon="admin:1" />
@@ -121,15 +121,15 @@
                 <field name="tbabcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_COLOR" default="#ffffff" showon="tbaborder:1[AND]admin:1" filter="scrollbar" />
                 <field name="tbabwidth" type="text" default="0" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_WIDTH" showon="tbaborder:1[AND]admin:1" filter="scrollbar" maxlength="64" />
                 <field name="tbabstyle" type="list" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_STYLE" default="solid" showon="tbaborder:1[AND]admin:1" filter="scrollbar">
-                    <option value="none">None</option>
-                    <option value="dotted">Dotted</option>
-                    <option value="dashed">Dashed</option>
-                    <option value="solid">Solid</option>
-                    <option value="double">Double</option>
-                    <option value="groove">Groove</option>
-                    <option value="ridge">Ridge</option>
-                    <option value="inset">Inset</option>
-                    <option value="outset">Outset</option>
+                    <option value="none">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_NONE</option>
+                    <option value="dotted">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DOTTED</option>
+                    <option value="dashed">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DASHED</option>
+                    <option value="solid">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_SOLID</option>
+                    <option value="double">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DOUBLE</option>
+                    <option value="groove">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_GROOVE</option>
+                    <option value="ridge">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_RIDGE</option>
+                    <option value="inset">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_INSET</option>
+                    <option value="outset">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_OUTSET</option>
                 </field>
                 <field name="tbabradius" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_RADIUS" default="100px" showon="tbaborder:1[AND]admin:1" filter="scrollbar" maxlength="64" />
                 <field name="adminthumbhover" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_ADMIN_PART_ONHOVER" showon="admin:1" />
@@ -141,19 +141,19 @@
                 <field name="tbhabcolor" type="color" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_COLOR" default="#ffffff" showon="tbhaborder:1[AND]admin:1" filter="scrollbar" />
                 <field name="tbhabwidth" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_WIDTH" default="0" showon="tbhaborder:1[AND]admin:1" filter="scrollbar" maxlength="64" />
                 <field name="tbhabstyle" type="list" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_STYLE" default="solid" showon="tbhaborder:1[AND]admin:1" filter="scrollbar">
-                    <option value="none">None</option>
-                    <option value="dotted">Dotted</option>
-                    <option value="dashed">Dashed</option>
-                    <option value="solid">Solid</option>
-                    <option value="double">Double</option>
-                    <option value="groove">Groove</option>
-                    <option value="ridge">Ridge</option>
-                    <option value="inset">Inset</option>
-                    <option value="outset">Outset</option>
+                    <option value="none">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_NONE</option>
+                    <option value="dotted">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DOTTED</option>
+                    <option value="dashed">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DASHED</option>
+                    <option value="solid">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_SOLID</option>
+                    <option value="double">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_DOUBLE</option>
+                    <option value="groove">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_GROOVE</option>
+                    <option value="ridge">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_RIDGE</option>
+                    <option value="inset">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_INSET</option>
+                    <option value="outset">PLG_SYSTEM_CUSTOM_SCROLLBAR_BORDER_STYLE_OUTSET</option>
                 </field>
                 <field name="tbhabradius" type="text" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_THUMB_BORDER_RADIUS" default="100px" showon="tbhaborder:1[AND]admin:1" filter="scrollbar" maxlength="64" />
             </fieldset>
-            <fieldset name="description">
+            <fieldset name="description" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_DESCRIPTION">
                 <field name="desctrack" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_DESC_TRACK" />
                 <field name="descthumb" type="note" class="alert alert-info" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_DESC_THUMB" />
                 <field name="descpluginwork" type="note" class="alert alert-warning" label="PLG_SYSTEM_CUSTOM_SCROLLBAR_DESC_PLUGIN_WORK" />
@@ -166,5 +166,9 @@
     <languages folder="language">
         <language tag="en-GB" client="administrator">en-GB/en-GB.plg_system_rpcustomscrollbar.ini</language>
         <language tag="en-GB" client="administrator">en-GB/en-GB.plg_system_rpcustomscrollbar.sys.ini</language>
+        <language tag="ru-RU" client="administrator">ru-RU/ru-RU.plg_system_rpcustomscrollbar.ini</language>
+        <language tag="ru-RU" client="administrator">ru-RU/ru-RU.plg_system_rpcustomscrollbar.sys.ini</language>
+        <language tag="uk-UA" client="administrator">uk-UA/uk-UA.plg_system_rpcustomscrollbar.ini</language>
+        <language tag="uk-UA" client="administrator">uk-UA/uk-UA.plg_system_rpcustomscrollbar.sys.ini</language>
     </languages>
 </extension>

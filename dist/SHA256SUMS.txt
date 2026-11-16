@@ -1,1 +1,1 @@
-0ef83deb6adbc583dd448e5d57ffeecfe7012d82b6aba66599a0a3f4632ade0e  rp-custom-scrollbar-joomla6-1.1.0.zip
+65acb0a5c84c7045b0c83a95386317122487a55b92441ff96fe37b49dacbc4b0  rp-custom-scrollbar-joomla6-1.1.1.zip

@@ -1,3 +1,8 @@
+# 1.1.1
+
+- Added complete Russian (ru-RU) and Ukrainian (uk-UA) translations, including installer descriptions, tabs and border styles.
+- Preserved English translations and all existing setting values.
+
 # 1.1.0
 
 - Joomla 6 / PHP 8.3+: namespaced plugin, service provider, typed events and Web Asset Manager.
