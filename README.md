@@ -4,7 +4,7 @@
 
 ## Скачать
 
-[Установочный ZIP 1.1.0](https://github.com/umatstar-lab/RP-customs-crollbar/releases/download/v1.1.0/rp-custom-scrollbar-joomla6-1.1.0.zip)
+[Установочный ZIP 1.1.0](https://github.com/umatstar-lab/RP-customs-crollbar/raw/refs/heads/main/dist/rp-custom-scrollbar-joomla6-1.1.0.zip)
 
 [ZIP из репозитория](https://github.com/umatstar-lab/RP-customs-crollbar/raw/refs/heads/main/dist/rp-custom-scrollbar-joomla6-1.1.0.zip) · [Отчёт и инструкция](docs/verification-1.1.0.ru.md) · [SHA-256](dist/SHA256SUMS.txt)
 
